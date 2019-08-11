@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:jbr="http://jbrmmg.me.uk/MonitorConfig"
+            targetNamespace="http://jbrmmg.me.uk/MonitorConfig"
+            elementFormDefault="qualified">
+
+    <xsd:simpleType name="IPv4Address">
+        <xsd:annotation>
+            <xsd:documentation>IPv4 address in dot-decimal notation. Equivalent to [0-255].[0-255].[0-255].[0-255]</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="((1?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.){3}(1?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType  name="MacAddress">
+        <xsd:annotation>
+            <xsd:documentation>Mac Address</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction  base="xsd:string">
+            <xsd:pattern  value="[0-9A-F]{2}:[0-9A-F]{2}:[0-9A-F]{2}:[0-9A-F]{2}:[0-9A-F]{2}:[0-9A-F]{2}" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="PortNumber">
+        <xsd:annotation>
+            <xsd:documentation>Port Number, digits</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="([0-9])+" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="DNSType">
+        <xsd:attribute name="name" type="xsd:string"  use="required"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="DNSsType">
+        <xsd:sequence maxOccurs="unbounded">
+            <xsd:element name="DNS" type="jbr:DNSType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="MonitoredItemType">
+        <xsd:attribute name="host" type="xsd:string" default="localhost"/>
+        <xsd:attribute name="port" type="jbr:PortNumber" use="required"/>
+        <xsd:attribute name="name" type="xsd:string" default=""/>
+    </xsd:complexType>
+
+    <xsd:complexType name="MonitoredItemsType">
+        <xsd:sequence maxOccurs="unbounded">
+            <xsd:element name="MonitoredItem" type="jbr:MonitoredItemType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="MonitorType">
+        <xsd:sequence>
+            <xsd:element name="MonitoredItems" type="jbr:MonitoredItemsType"/>
+        </xsd:sequence>
+        <xsd:attribute name="name" type="xsd:string" use="required"/>
+        <xsd:attribute name="port" type="jbr:PortNumber" use="required"/>
+        <xsd:attribute name="primary" default="no">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="yes" />
+                    <xsd:enumeration value="no" />
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:attribute>
+    </xsd:complexType>
+
+    <xsd:complexType name="MonitorsType">
+        <xsd:sequence maxOccurs="unbounded">
+            <xsd:element name="Monitor" type="jbr:MonitorType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="MachineType">
+        <xsd:sequence>
+            <xsd:element name="DNSs" type="jbr:DNSsType"/>
+            <xsd:element name="Monitors" type="jbr:MonitorsType"/>
+        </xsd:sequence>
+        <xsd:attribute name="id" type="jbr:MacAddress" use="required"/>
+        <xsd:attribute name="name" type="xsd:string" use="required"/>
+        <xsd:attribute name="ip" type="jbr:IPv4Address" use="required"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="MachinesType">
+        <xsd:sequence maxOccurs="unbounded">
+            <xsd:element name="Machine" type="jbr:MachineType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="Machines" type="jbr:MachinesType"/>
+</xsd:schema>

@@ -1,0 +1,99 @@
+body {
+    font-family: Garuda, serif;
+}
+
+th {
+    font-size:   18px;
+    line-height: 20px;
+    padding:      5px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+img.status {
+    display:        block;
+    margin-left:    auto;
+    margin-right:   auto;
+    height:         28px;     /* width automatically gets set the same. */
+    vertical-align: middle;
+}
+
+img.actionbutton {
+    display:         block;
+    margin-left:     auto;
+    margin-right:    auto;
+    height:          20px;    /* width automatically gets set the same. */
+    vertical-align:  middle;
+}
+
+button.actionbutton {
+    margin-left:     auto;
+    margin-right:    auto;
+    margin-top:      auto;
+    margin-bottom:   auto;
+    height:          30px;    /* width automatically gets set the same. */
+    vertical-align:  middle;
+}
+
+td {
+    height: 25px;
+    padding: 5px;
+}
+
+td.status {
+    margin:         0;
+    text-align:     center;
+    vertical-align: middle;
+}
+
+td.indicator {
+    text-align:  center;
+    font-size:   28px;
+    font-weight: bold;
+}
+
+td.time {
+    font-family: "Courier 10 Pitch", serif;
+    font-size: 12px;
+}
+
+p.name {
+    font-family:   Garuda, serif;
+    font-size:     20px;
+    line-height:   24px;
+    font-weight:   bold;
+    margin-top:    2px;
+    margin-bottom: 0;
+}
+
+p.description {
+    font-family: "Courier 10 Pitch", serif;
+    font-size:   10px;
+    padding:      0;
+    margin:       0;
+}
+
+a.description {
+    font-family: "Courier 10 Pitch", serif;
+    font-size:   10px;
+    padding:      0;
+    margin:       0;
+}
+
+a.description2 {
+    font-family: "Courier 10 Pitch", serif;
+    font-size:   10px;
+    padding:      0;
+    margin:       0;
+    margin-left:  5px;
+}
+
+a.version {
+    font-family:   "Courier 10 Pitch", serif;
+    font-size:     8px;
+    padding:       0;
+    margin-top:    2px;
+    margin-bottom: 0;
+}
