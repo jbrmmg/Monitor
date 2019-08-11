@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Monitor</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="refresh" content="5" th:content="${refreshRate}" />
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../../css/default.css" th:href="@{/css/default.css}"/>
+    <link rel="icon" href="../../img/favicon.ico" th:href="@{/img/favicon.ico}"/>
+</head>
+<body>
+<div class="statusmonitorlist" th:unless="${#lists.isEmpty(allMonitorStatus)}">
+    <table>
+        <thead>
+        <tr>
+            <th>Status</th>
+            <th>Name</th>
+            <th>DB<br/>Status</th>
+            <th>Service<br/>Status</th>
+            <th>Last Update<br/>Time</th>
+            <th>Last Green<br/>Time</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="ms : ${allMonitorStatus}">
+            <td class="status">
+                <th:block th:switch="${ms.status.name()}">
+                    <div th:case="'GREEN'">
+                        <img class="status" th:src="@{/img/green.svg}"/>
+                    </div>
+                    <div th:case="'AMBER'">
+                        <img class="status" th:src="@{/img/amber.svg}"/>
+                    </div>
+                    <div th:case="'RED'">
+                        <img class="status" th:src="@{/img/red.svg}"/>
+                    </div>
+                    <div th:case="'UNKNOWN'">
+                        <img class="status" th:src="@{/img/unknown.svg}"/>
+                    </div>
+                </th:block>
+            </td>
+            <td>
+                <p class="name" th:text="${ms.name}">Name</p>
+                <p class="description"><a class="description" th:text="${ms.description}">description</a><a class="description2" th:text="${ms.version}">version</a></p>
+            </td>
+            <td class="indicator" th:text="${ms.dbStatus}">DbStatus</td>
+            <td class="indicator" th:text="${ms.serviceStatus}">ServiceStatus</td>
+            <td class="time" th:text="${ms.lastUpdateTime}">LastUpdate</td>
+            <td class="time" th:text="${ms.lastGreenTime}">LastGreen</td>
+            <td>
+                <form action="#" th:action="@{/jbr/int/monitoraction}" method="post">
+                    <input type="hidden" name="id" value="ServiceId" th:value="${ms.id}" />
+                    <button type="submit" name="action" value="RefreshInfo"><img class="actionbutton" th:src="@{/img/reloadInfo.svg}"/></button>
+                    <button type="submit" name="action" value="RefreahHealth"><img class="actionbutton" th:src="@{/img/reloadStatus.svg}"/></button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
