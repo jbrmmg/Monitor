@@ -7,7 +7,7 @@ After=mysql.service
 
 [Service]
 User=jbrdev
-ExecStart=/usr/bin/java -Xms30M -Xmx30M -Dspring.config.location=file:/usr/bin/jbr/dev/MiddleTier-Monitor-DEV.properties -Dlogging.config=file:/usr/bin/jbr/dev/MiddleTier-Monitor-DEV-log4j.xml -jar /usr/bin/jbr/dev/MiddleTier-Monitor-DEV-onejar.jar
+ExecStart=/usr/bin/java -Xms30M -Xmx30M -Dspring.profiles.active=dev -jar /usr/bin/jbr/dev/MiddleTier-Monitor-DEV-onejar.jar
 
 [Install]
 WantedBy=multi-user.target

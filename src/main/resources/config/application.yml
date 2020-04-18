@@ -1,0 +1,6 @@
+logging:
+  level:
+    ROOT: INFO
+
+monitor:
+  restartCmdFormat: bash -c "sleep 10"
