@@ -18,7 +18,7 @@ import java.util.List;
 public class ServiceHealthIndicator implements HealthIndicator {
     final static private Logger LOG = LoggerFactory.getLogger(ServiceHealthIndicator.class);
 
-    @Value("${middle.tier.service.name}")
+    @Value("${monitor.service.name}")
     private String serviceName;
 
     @Override

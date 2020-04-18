@@ -1,0 +1,11 @@
+logging:
+  level:
+    ROOT: INFO
+    com.jbr.middletier: DEBUG
+
+server.port: 13021
+
+monitor:
+  service.name: "Middle Tier Monitor (debug)"
+  schedule: "25 0 0 * * ?"
+  schedule.restart: "15 40 17 * * ?"
