@@ -25,6 +25,7 @@ public class Processor implements DisposableBean, Runnable {
     final static private Logger LOG = LoggerFactory.getLogger(Processor.class);
 
     private final PortManager portManager;
+    private final WebLogManager webLogManager;
     private Thread thread;
     private volatile boolean destroyed;
     private final String restartCommandFormat;
@@ -33,8 +34,9 @@ public class Processor implements DisposableBean, Runnable {
     private long waitInterval;
 
     @Autowired
-    public Processor(PortManager portManager, @Value("${middle.tier.monitor.restartCmdFormat:sudo systemctl restart %s}") String restartCommand) {
+    public Processor(PortManager portManager, WebLogManager webLogManager, @Value("${middle.tier.monitor.restartCmdFormat:sudo systemctl restart %s}") String restartCommand) {
         this.portManager = portManager;
+        this.webLogManager = webLogManager;
         this.destroyed = false;
         this.restartCommandFormat = restartCommand;
 
@@ -108,6 +110,7 @@ public class Processor implements DisposableBean, Runnable {
     private void RestartPort(Port nextPort) {
         try {
             LOG.info("Restart service - " + nextPort.getServiceName());
+            webLogManager.postWebLog(WebLogManager.webLogLevel.INFO,"Restart port - " + nextPort.getServiceName());
             String restartCommand = String.format(restartCommandFormat, nextPort.getServiceName());
             LOG.info(String.format("Command: %s", restartCommand));
 
@@ -134,6 +137,7 @@ public class Processor implements DisposableBean, Runnable {
 
             t.interrupt();
         } catch (Exception ex) {
+            webLogManager.postWebLog(WebLogManager.webLogLevel.ERROR,"Failed to restart port " + nextPort.getServiceName());
             LOG.error("Start service failed.", ex);
         }
 
