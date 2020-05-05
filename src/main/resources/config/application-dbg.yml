@@ -9,4 +9,4 @@ monitor:
   service.name: "Middle Tier Monitor (debug)"
   schedule: "25 0 0 * * ?"
   schedule.restart: "15 40 17 * * ?"
-  web-log-url: http://localhost:12001/jbr/int/log/data
+  web-log-url: http://localhost:10001/jbr/int/log/data
