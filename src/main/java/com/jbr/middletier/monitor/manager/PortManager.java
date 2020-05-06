@@ -27,6 +27,7 @@ public class PortManager {
 
     private final Map<Integer,Port> monitorData;
     private final PortFactory portFactory;
+    private final WebLogManager webLogManager;
 
     private static String formatMacAddress(byte[] mac) {
         if(mac == null)
@@ -42,9 +43,10 @@ public class PortManager {
     }
 
     @Autowired
-    public PortManager(@Value("${server.port}") String port, PortFactory portFactory) {
+    public PortManager(@Value("${server.port}") String port, PortFactory portFactory, WebLogManager webLogManager) {
         this.portFactory = portFactory;
         this.monitorData = new HashMap<>();
+        this.webLogManager = webLogManager;
 
         // New, determine the hosts to monitor using XML configuration
         LOG.info("Starting up with new configuration");
@@ -85,10 +87,14 @@ public class PortManager {
                             if(nextMonitor.getPort().equalsIgnoreCase(port)) {
                                 LOG.info("Found definition for " + nextMonitor.getPort());
 
+                                webLogManager.postWebLog(WebLogManager.webLogLevel.INFO,"Start up Monitor - " + nextMonitor.getName());
+
                                 // Setup monitors.
                                 for(MonitoredItemType nextItem : nextMonitor.getMonitoredItems().getMonitoredItem()) {
                                     Port nextResult = portFactory.createHealthAndInfoMonitor(nextItem,nextMonitor.getPrimary().equalsIgnoreCase("Yes") ? true : false);
                                     monitorData.put(nextResult.getId(),nextResult);
+
+                                    webLogManager.postWebLog(WebLogManager.webLogLevel.INFO,"Monitor - " + nextItem.getName());
                                 }
 
                                 foundConfig = true;

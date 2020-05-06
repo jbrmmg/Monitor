@@ -1,0 +1,22 @@
+spring:
+  boot:
+    admin:
+      client:
+        url: ${spring.admin.clienturl}
+
+    application:
+      name: Middle Tier Monitor (Development)
+
+logging.file: /var/log/jbr/MiddleTier-Monitor-DEV.log
+logging:
+  file:
+    max-history: 3
+    max-size: 100MB
+
+server.port: 10021
+
+monitor:
+  service.name: "Middle Tier Monitor (Development)"
+  schedule: "15 0/8 * * * ?"
+  schedule.restart: "15 7 12 * * ?"
+  web-log-url: http://localhost:10001/jbr/int/log/data
