@@ -28,7 +28,6 @@
             <Monitor name="Triggers Broom Monitor" port="12021" primary="yes">
                 <MonitoredItems>
                     <MonitoredItem port="12001"/>
-                    <MonitoredItem port="12005"/>
                     <MonitoredItem port="12009"/>
                     <MonitoredItem port="12013"/>
                     <MonitoredItem port="12017"/>
