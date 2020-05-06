@@ -11,7 +11,6 @@
             <Monitor name="Triggers Broom Monitor (Debug)" port="13021" primary="yes">
                 <MonitoredItems>
                     <MonitoredItem port="10001" name="Test Check"/>
-                    <MonitoredItem port="10005"/>
                     <MonitoredItem port="10009"/>
                     <MonitoredItem port="10013"/>
                     <MonitoredItem port="10017"/>
@@ -21,7 +20,6 @@
             <Monitor name="Triggers Broom Monitor (Dev)" port="10021">
                 <MonitoredItems>
                     <MonitoredItem port="10001"/>
-                    <MonitoredItem port="10005"/>
                     <MonitoredItem port="10009"/>
                     <MonitoredItem port="10013"/>
                     <MonitoredItem port="10017"/>
@@ -30,7 +28,6 @@
             <Monitor name="Triggers Broom Monitor" port="12021" primary="yes">
                 <MonitoredItems>
                     <MonitoredItem port="12001"/>
-                    <MonitoredItem port="12005"/>
                     <MonitoredItem port="12009"/>
                     <MonitoredItem port="12013"/>
                     <MonitoredItem port="12017"/>
@@ -41,7 +38,6 @@
                     <MonitoredItem host="192.168.1.205" port="12021" name="Raspberry Pi 3 Monitor"/>
                     <MonitoredItem host="192.168.1.202" port="12021" name="Raspberry Pi 4 Monitor"/>
                     <MonitoredItem port="10001"/>
-                    <MonitoredItem port="10005"/>
                     <MonitoredItem port="10009"/>
                     <MonitoredItem port="10013"/>
                     <MonitoredItem port="10017"/>
