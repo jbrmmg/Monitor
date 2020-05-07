@@ -135,6 +135,8 @@ public class Processor implements DisposableBean, Runnable {
                 LOG.warn(String.format("Command completed, non zero result - %d", result));
             }
 
+            Thread.sleep(3000);
+
             t.interrupt();
         } catch (Exception ex) {
             webLogManager.postWebLog(WebLogManager.webLogLevel.ERROR,"Failed to restart port " + nextPort.getServiceName());
