@@ -26,7 +26,6 @@ public class Processor implements DisposableBean, Runnable {
 
     private final PortManager portManager;
     private final WebLogManager webLogManager;
-    private Thread thread;
     private volatile boolean destroyed;
     private final String restartCommandFormat;
 
@@ -41,8 +40,8 @@ public class Processor implements DisposableBean, Runnable {
         this.restartCommandFormat = restartCommand;
 
         // Start the thread.
-        this.thread = new Thread(this);
-        this.thread.start();
+        Thread thread = new Thread(this);
+        thread.start();
     }
 
     @Override
@@ -121,10 +120,11 @@ public class Processor implements DisposableBean, Runnable {
 
             Thread t = new Thread(() -> {
                 try {
-                    Thread.sleep(1000 * 60 * 10);
+                    Thread.sleep(1000L * 60L * 10L);
                     LOG.warn("Restart, taken too long.");
                     restartProcess.destroy();
                 } catch (InterruptedException ignored) {
+                    Thread.currentThread().interrupt();
                 }
             });
 
