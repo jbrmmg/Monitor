@@ -2,7 +2,7 @@
 <Machines xmlns="http://jbrmmg.me.uk/MonitorConfig"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://jbrmmg.me.uk/MonitorConfig file://../xsd/monitor-config.xsd">
-    <Machine id="74:D4:35:1F:22:07" name="Triggers Broom" ip="192.168.1.64">
+    <Machine id="74:D4:35:1F:22:07" name="Triggers Broom" ip="192.168.178.35">
         <DNSs>
             <DNS name="triggersbroom.jbrmmg.me.uk"/>
             <DNS name="mysql.jbrmmg.me.uk"/>
@@ -14,7 +14,7 @@
                     <MonitoredItem port="10009"/>
                     <MonitoredItem port="10013"/>
                     <MonitoredItem port="10017"/>
-                    <MonitoredItem host="192.168.1.64"  port="10021" name="Dev monitor"/>
+                    <MonitoredItem host="192.168.178.35"  port="10021" name="Dev monitor"/>
                 </MonitoredItems>
             </Monitor>
             <Monitor name="Triggers Broom Monitor (Dev)" port="10021">
@@ -31,135 +31,137 @@
                     <MonitoredItem port="12013"/>
                     <MonitoredItem port="12017"/>
                     <MonitoredItem port="12001"/>
-                    <MonitoredItem host="192.168.1.65"  port="12021" name="Small Broom Monitor"/>
-                    <MonitoredItem host="192.168.1.66"  port="12021" name="Medium Broom Monitor"/>
-                    <MonitoredItem host="192.168.1.203" port="12021" name="Raspberry Pi Monitor"/>
-                    <MonitoredItem host="192.168.1.204" port="12021" name="Raspberry Pi 2 Monitor"/>
-                    <MonitoredItem host="192.168.1.205" port="12021" name="Raspberry Pi 3 Monitor"/>
-                    <MonitoredItem host="192.168.1.202" port="12021" name="Raspberry Pi 4 Monitor"/>
+                    <MonitoredItem port="12022"/>
+                    <MonitoredItem host="192.168.178.43"  port="12021" name="Small Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.53"  port="12021" name="Medium Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.57" port="12021" name="Raspberry Pi Monitor"/>
+                    <MonitoredItem host="192.168.178.56" port="12021" name="Raspberry Pi 2 Monitor"/>
+                    <MonitoredItem host="192.168.178.60" port="12021" name="Raspberry Pi 3 Monitor"/>
+                    <MonitoredItem host="192.168.178.61" port="12021" name="Raspberry Pi 4 Monitor"/>
                     <MonitoredItem port="10009"/>
                     <MonitoredItem port="10013"/>
                     <MonitoredItem port="10017"/>
                     <MonitoredItem port="10001"/>
+                    <MonitoredItem port="10022"/>
                 </MonitoredItems>
             </Monitor>
         </Monitors>
     </Machine>
-    <Machine id="80:A5:89:6A:D1:37" name="Tiny Broom" ip="192.168.1.70">
+    <Machine id="80:A5:89:6A:D1:37" name="Tiny Broom" ip="192.168.178.62">
         <DNSs>
             <DNS name="tinybroom.jbrmmg.me.uk"/>
         </DNSs>
         <Monitors>
             <Monitor name="Tiny Broom" port="12021" primary="yes">
                 <MonitoredItems>
-                    <MonitoredItem host="192.168.1.64"  port="12021" name="Triggers Broom Monitor"/>
-                    <MonitoredItem host="192.168.1.66"  port="12021" name="Medium Broom Monitor"/>
-                    <MonitoredItem host="192.168.1.203" port="12021" name="Raspberry Pi Monitor"/>
-                    <MonitoredItem host="192.168.1.204" port="12021" name="Raspberry Pi 2 Monitor"/>
-                    <MonitoredItem host="192.168.1.205" port="12021" name="Raspberry Pi 3 Monitor"/>
-                    <MonitoredItem host="192.168.1.202" port="12021" name="Raspberry Pi 4 Monitor"/>
+                    <MonitoredItem host="192.168.178.35"  port="12021" name="Triggers Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.53"  port="12021" name="Medium Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.57" port="12021" name="Raspberry Pi Monitor"/>
+                    <MonitoredItem host="192.168.178.56" port="12021" name="Raspberry Pi 2 Monitor"/>
+                    <MonitoredItem host="192.168.178.60" port="12021" name="Raspberry Pi 3 Monitor"/>
+                    <MonitoredItem host="192.168.178.61" port="12021" name="Raspberry Pi 4 Monitor"/>
                 </MonitoredItems>
             </Monitor>
         </Monitors>
     </Machine>
-    <Machine id="40:8D:5C:A6:79:90" name="Small Broom" ip="192.168.1.65">
+    <Machine id="40:8D:5C:A6:79:90" name="Small Broom" ip="192.168.178.43">
         <DNSs>
             <DNS name="smallbroom.jbrmmg.me.uk"/>
         </DNSs>
         <Monitors>
             <Monitor name="Small Broom" port="12021" primary="yes">
                 <MonitoredItems>
-                    <MonitoredItem host="192.168.1.64"  port="12021" name="Triggers Broom Monitor"/>
-                    <MonitoredItem host="192.168.1.66"  port="12021" name="Medium Broom Monitor"/>
-                    <MonitoredItem host="192.168.1.203" port="12021" name="Raspberry Pi Monitor"/>
-                    <MonitoredItem host="192.168.1.204" port="12021" name="Raspberry Pi 2 Monitor"/>
-                    <MonitoredItem host="192.168.1.205" port="12021" name="Raspberry Pi 3 Monitor"/>
-                    <MonitoredItem host="192.168.1.202" port="12021" name="Raspberry Pi 4 Monitor"/>
+                    <MonitoredItem host="192.168.178.35"  port="12021" name="Triggers Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.53"  port="12021" name="Medium Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.57" port="12021" name="Raspberry Pi Monitor"/>
+                    <MonitoredItem host="192.168.178.56" port="12021" name="Raspberry Pi 2 Monitor"/>
+                    <MonitoredItem host="192.168.178.60" port="12021" name="Raspberry Pi 3 Monitor"/>
+                    <MonitoredItem host="192.168.178.61" port="12021" name="Raspberry Pi 4 Monitor"/>
                 </MonitoredItems>
             </Monitor>
         </Monitors>
     </Machine>
-    <Machine id="E0:D5:5E:18:51:76" name="Medium Broom" ip="192.168.1.66">
+    <Machine id="E0:D5:5E:18:51:76" name="Medium Broom" ip="192.168.178.53">
         <DNSs>
             <DNS name="mediumbroom.jbrmmg.me.uk"/>
         </DNSs>
         <Monitors>
             <Monitor name="Medium Broom" port="12021" primary="yes">
                 <MonitoredItems>
-                    <MonitoredItem host="192.168.1.64"  port="12021" name="Triggers Broom Monitor"/>
-                    <MonitoredItem host="192.168.1.65"  port="12021" name="Small Broom Monitor"/>
-                    <MonitoredItem host="192.168.1.203" port="12021" name="Raspberry Pi Monitor"/>
-                    <MonitoredItem host="192.168.1.204" port="12021" name="Raspberry Pi 2 Monitor"/>
-                    <MonitoredItem host="192.168.1.205" port="12021" name="Raspberry Pi 3 Monitor"/>
-                    <MonitoredItem host="192.168.1.202" port="12021" name="Raspberry Pi 4 Monitor"/>
+                    <MonitoredItem host="192.168.178.35"  port="12021" name="Triggers Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.43"  port="12021" name="Small Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.57" port="12021" name="Raspberry Pi Monitor"/>
+                    <MonitoredItem host="192.168.178.56" port="12021" name="Raspberry Pi 2 Monitor"/>
+                    <MonitoredItem host="192.168.178.60" port="12021" name="Raspberry Pi 3 Monitor"/>
+                    <MonitoredItem host="192.168.178.61" port="12021" name="Raspberry Pi 4 Monitor"/>
                 </MonitoredItems>
             </Monitor>
         </Monitors>
     </Machine>
-    <Machine id="B8:27:EB:76:7B:E5" name="Raspbian Pi" ip="192.168.1.203">
+    <Machine id="B8:27:EB:76:7B:E5" name="Raspbian Pi" ip="192.168.178.57">
         <DNSs>
             <DNS name="raspbianpi.jbrmmg.me.uk"/>
         </DNSs>
         <Monitors>
             <Monitor name="Raspberry Pi" port="12021" primary="yes">
                 <MonitoredItems>
-                    <MonitoredItem host="192.168.1.64"  port="12021" name="Triggers Broom Monitor"/>
-                    <MonitoredItem host="192.168.1.65"  port="12021" name="Small Broom Monitor"/>
-                    <MonitoredItem host="192.168.1.66"  port="12021" name="Medium Broom Monitor"/>
-                    <MonitoredItem host="192.168.1.204" port="12021" name="Raspberry Pi 2 Monitor"/>
-                    <MonitoredItem host="192.168.1.205" port="12021" name="Raspberry Pi 3 Monitor"/>
-                    <MonitoredItem host="192.168.1.202" port="12021" name="Raspberry Pi 4 Monitor"/>
+                    <MonitoredItem host="192.168.178.35"  port="12021" name="Triggers Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.43"  port="12021" name="Small Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.53"  port="12021" name="Medium Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.56" port="12021" name="Raspberry Pi 2 Monitor"/>
+                    <MonitoredItem host="192.168.178.60" port="12021" name="Raspberry Pi 3 Monitor"/>
+                    <MonitoredItem host="192.168.178.61" port="12021" name="Raspberry Pi 4 Monitor"/>
                 </MonitoredItems>
             </Monitor>
         </Monitors>
     </Machine>
-    <Machine id="B8:27:EB:93:38:91" name="Raspbian Pi 2" ip="192.168.1.204">
+    <Machine id="B8:27:EB:93:38:91" name="Raspbian Pi 2" ip="192.168.178.56">
         <DNSs>
             <DNS name="raspbianpi2.jbrmmg.me.uk"/>
         </DNSs>
         <Monitors>
             <Monitor name="Raspberry Pi 2" port="12021" primary="yes">
                 <MonitoredItems>
-                    <MonitoredItem host="192.168.1.64"  port="12021" name="Triggers Broom Monitor"/>
-                    <MonitoredItem host="192.168.1.65"  port="12021" name="Small Broom Monitor"/>
-                    <MonitoredItem host="192.168.1.66"  port="12021" name="Medium Broom Monitor"/>
-                    <MonitoredItem host="192.168.1.203" port="12021" name="Raspberry Pi Monitor"/>
-                    <MonitoredItem host="192.168.1.205" port="12021" name="Raspberry Pi 3 Monitor"/>
-                    <MonitoredItem host="192.168.1.202" port="12021" name="Raspberry Pi 4 Monitor"/>
+                    <MonitoredItem host="192.168.178.35"  port="12021" name="Triggers Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.43"  port="12021" name="Small Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.53"  port="12021" name="Medium Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.57" port="12021" name="Raspberry Pi Monitor"/>
+                    <MonitoredItem host="192.168.178.60" port="12021" name="Raspberry Pi 3 Monitor"/>
+                    <MonitoredItem host="192.168.178.61" port="12021" name="Raspberry Pi 4 Monitor"/>
                 </MonitoredItems>
             </Monitor>
         </Monitors>
     </Machine>
-    <Machine id="B8:27:EB:BC:05:67" name="Raspbian Pi 3" ip="192.168.1.205">
+    <Machine id="B8:27:EB:BC:05:67" name="Raspbian Pi 3" ip="192.168.178.60">
         <DNSs>
             <DNS name="raspbianpi3.jbrmmg.me.uk"/>
         </DNSs>
         <Monitors>
             <Monitor name="Raspberry Pi 3" port="12021" primary="yes">
                 <MonitoredItems>
-                    <MonitoredItem host="192.168.1.64"  port="12021" name="Triggers Broom Monitor"/>
-                    <MonitoredItem host="192.168.1.65"  port="12021" name="Small Broom Monitor"/>
-                    <MonitoredItem host="192.168.1.66"  port="12021" name="Medium Broom Monitor"/>
-                    <MonitoredItem host="192.168.1.203" port="12021" name="Raspberry Pi Monitor"/>
-                    <MonitoredItem host="192.168.1.204" port="12021" name="Raspberry Pi 2 Monitor"/>
-                    <MonitoredItem host="192.168.1.202" port="12021" name="Raspberry Pi 4 Monitor"/>
+                    <MonitoredItem host="192.168.178.35" port="12021" name="Triggers Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.43" port="12021" name="Small Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.53" port="12021" name="Medium Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.57" port="12021" name="Raspberry Pi Monitor"/>
+                    <MonitoredItem host="192.168.178.56" port="12021" name="Raspberry Pi 2 Monitor"/>
+                    <MonitoredItem host="192.168.178.61" port="12021" name="Raspberry Pi 4 Monitor"/>
                 </MonitoredItems>
             </Monitor>
         </Monitors>
     </Machine>
-    <Machine id="B8:27:EB:B3:6A:C2" name="Raspbian Pi 4" ip="192.168.1.202">
+    <Machine id="B8:27:EB:B3:6A:C2" name="Raspbian Pi 4" ip="192.168.178.61">
         <DNSs>
             <DNS name="raspbianpi4.jbrmmg.me.uk"/>
         </DNSs>
         <Monitors>
             <Monitor name="Raspberry Pi 4" port="12021" primary="yes">
                 <MonitoredItems>
-                    <MonitoredItem host="192.168.1.64"  port="12021" name="Triggers Broom Monitor"/>
-                    <MonitoredItem host="192.168.1.65"  port="12021" name="Small Broom Monitor"/>
-                    <MonitoredItem host="192.168.1.66"  port="12021" name="Medium Broom Monitor"/>
-                    <MonitoredItem host="192.168.1.203" port="12021" name="Raspberry Pi Monitor"/>
-                    <MonitoredItem host="192.168.1.204" port="12021" name="Raspberry Pi 2 Monitor"/>
-                    <MonitoredItem host="192.168.1.205" port="12021" name="Raspberry Pi 3 Monitor"/>
+                    <MonitoredItem host="192.168.178.35"  port="12021" name="Triggers Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.43"  port="12021" name="Small Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.53"  port="12021" name="Medium Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.57" port="12021" name="Raspberry Pi Monitor"/>
+                    <MonitoredItem host="192.168.178.56" port="12021" name="Raspberry Pi 2 Monitor"/>
+                    <MonitoredItem host="192.168.178.60" port="12021" name="Raspberry Pi 3 Monitor"/>
                 </MonitoredItems>
             </Monitor>
         </Monitors>
