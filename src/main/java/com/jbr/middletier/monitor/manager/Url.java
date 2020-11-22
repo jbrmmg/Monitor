@@ -3,13 +3,6 @@ package com.jbr.middletier.monitor.manager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLConnection;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -26,8 +19,9 @@ public abstract class Url {
     private volatile UrlStateType status;
     protected volatile boolean problem;
     private volatile Date nextRequestTime;
-    private int requestFrequencyOkMS;
-    private int requestFrequencyFailMS;
+    private final Object lockObject = new Object();
+    private final int requestFrequencyOkMS;
+    private final int requestFrequencyFailMS;
 
     protected void setUpdateTime(UpdateTimeOffsetType useOffset) {
         Calendar calendar = Calendar.getInstance();
@@ -41,7 +35,7 @@ public abstract class Url {
                 break;
         }
 
-        synchronized (nextRequestTime) {
+        synchronized (lockObject) {
             this.nextRequestTime = calendar.getTime();
         }
 
@@ -73,10 +67,6 @@ public abstract class Url {
         return this.urlAddress;
     }
 
-    public boolean isStillWaiting() {
-        return this.status == UrlStateType.UNKNOWN || this.status == UrlStateType.WAITING;
-    }
-
     public abstract void processResonse(String response);
 
     public abstract void urlFailed();
@@ -102,14 +92,14 @@ public abstract class Url {
 
     public boolean requiresRefresh() {
         // Does this require a refresh?
-        synchronized (status) {
+        synchronized (lockObject) {
             // If the status is waiting, then there is no need to request again.
             if(status == UrlStateType.WAITING) {
                 return false;
             }
         }
 
-        synchronized (nextRequestTime) {
+        synchronized (lockObject) {
             Date date = new Date();
 
             // If there time is in the future, then no need to request.

@@ -92,7 +92,7 @@ public class Port {
         }
 
         // If red is not possible, and green is then the result must be green.
-        if((redPossible == false) && (greenPossible == true)) {
+        if((!redPossible) && (greenPossible)) {
             if(this.greenTime == null) {
                 this.greenTime = new Date();
             }
@@ -100,7 +100,7 @@ public class Port {
         }
 
         // If green is not possible and red is then the result must be red.
-        if((redPossible == true) && (greenPossible == false)) {
+        if((redPossible) && (!greenPossible)) {
             this.greenTime = null;
             return PortStatus.StatusType.RED;
         }
@@ -115,7 +115,7 @@ public class Port {
         getStatus();
 
         // Get a list of Urls that need updating.
-        List<Url> result = new ArrayList();
+        List<Url> result = new ArrayList<>();
 
         for(Url nextUrl : urlMonitors) {
             if(nextUrl.requiresRefresh()) {

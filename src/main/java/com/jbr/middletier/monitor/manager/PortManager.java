@@ -26,8 +26,6 @@ public class PortManager {
     final static private Logger LOG = LoggerFactory.getLogger(PortManager.class);
 
     private final Map<Integer,Port> monitorData;
-    private final PortFactory portFactory;
-    private final WebLogManager webLogManager;
 
     private static String formatMacAddress(byte[] mac) {
         if(mac == null)
@@ -44,9 +42,7 @@ public class PortManager {
 
     @Autowired
     public PortManager(@Value("${server.port}") String port, PortFactory portFactory, WebLogManager webLogManager) {
-        this.portFactory = portFactory;
         this.monitorData = new HashMap<>();
-        this.webLogManager = webLogManager;
 
         // New, determine the hosts to monitor using XML configuration
         LOG.info("Starting up with new configuration");
@@ -91,7 +87,7 @@ public class PortManager {
 
                                 // Setup monitors.
                                 for(MonitoredItemType nextItem : nextMonitor.getMonitoredItems().getMonitoredItem()) {
-                                    Port nextResult = portFactory.createHealthAndInfoMonitor(nextItem,nextMonitor.getPrimary().equalsIgnoreCase("Yes") ? true : false);
+                                    Port nextResult = portFactory.createHealthAndInfoMonitor(nextItem, nextMonitor.getPrimary().equalsIgnoreCase("Yes"));
                                     monitorData.put(nextResult.getId(),nextResult);
 
                                     webLogManager.postWebLog(WebLogManager.webLogLevel.INFO,"Monitor - " + nextItem.getName());
@@ -124,7 +120,7 @@ public class PortManager {
     }
 
     public List<PortStatus> getStatus() {
-        List<PortStatus> result = new ArrayList();
+        List<PortStatus> result = new ArrayList<>();
 
         for(Port nextResult : monitorData.values()) {
             result.add(nextResult.getStatus());
@@ -134,7 +130,7 @@ public class PortManager {
     }
 
     public List<Url> getUrlsToRefresh() {
-        List<Url> result = new ArrayList();
+        List<Url> result = new ArrayList<>();
 
         for(Port nextResult : monitorData.values()) {
             result.addAll(nextResult.getUrlsToRefresh());
@@ -144,7 +140,7 @@ public class PortManager {
     }
 
     public List<Port> getPortsToRestart() {
-        List<Port> result = new ArrayList();
+        List<Port> result = new ArrayList<>();
 
         for(Port nextResult : monitorData.values()) {
             if(nextResult.restartRequired()) {

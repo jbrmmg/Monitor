@@ -11,18 +11,18 @@ class InfoUrl extends Url {
     private static final String APP_DESCRIPTION = "description";
     private static final String APP_VERSION = "version";
     private static final int INFO_REFRESH_MS = 60 * 60 * 1000;
-    private static final int INFO_FAIL_REFRESH_MS = 1 * 60 * 1000;
+    private static final int INFO_FAIL_REFRESH_MS = 60 * 1000;
 
 
     private String name;
     private String description;
     private String version;
-    private boolean constantName;
+    private final boolean constantName;
 
     public InfoUrl(String baseUrl, String name) {
         super("http://" + baseUrl + "/actuator/info", INFO_REFRESH_MS, INFO_FAIL_REFRESH_MS);
 
-        this.constantName = (name.length() > 0) ? true : false;
+        this.constantName = name.length() > 0;
 
         this.name = ( constantName ) ? name : "?";
         this.description = "?";

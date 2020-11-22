@@ -51,6 +51,7 @@ public class Processor implements DisposableBean, Runnable {
                 DoProcessing();
 
                 // Sleep for time.
+                //noinspection BusyWait
                 Thread.sleep(waitInterval * 1000);
             }
         } catch (Exception ex) {

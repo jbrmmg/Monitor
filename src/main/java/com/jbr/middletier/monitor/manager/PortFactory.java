@@ -20,6 +20,8 @@ public class PortFactory {
     }
 
     public Port createHealthAndInfoMonitor(MonitoredItemType itemConfig, boolean primary) {
+        LOG.info("CreateHealthAndInfoMonitor");
+
         String baseUrl = itemConfig.getHost() + ":" + itemConfig.getPort();
         String name = itemConfig.getName();
 
