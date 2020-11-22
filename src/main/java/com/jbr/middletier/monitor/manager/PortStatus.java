@@ -12,7 +12,7 @@ public class PortStatus {
 
     public enum StatusType { UNKNOWN, RED, AMBER, GREEN }
 
-    private static String TIME_FORMAT = "dd MMM yyyy HH:mm:ss";
+    private static final String TIME_FORMAT = "dd MMM yyyy HH:mm:ss";
 
     private final int id;
     private final StatusType status;
@@ -25,6 +25,7 @@ public class PortStatus {
     private Date lastGreenTime;
 
     public PortStatus(int id, StatusType status) {
+        LOG.info("Port Status" + id + " - " + status);
         this.id = id;
         this.status = status;
     }

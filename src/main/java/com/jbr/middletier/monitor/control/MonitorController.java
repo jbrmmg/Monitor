@@ -1,18 +1,15 @@
 package com.jbr.middletier.monitor.control;
 
 import com.jbr.middletier.monitor.manager.PortManager;
-import com.jbr.middletier.monitor.manager.Port;
 import com.jbr.middletier.monitor.manager.PortStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,7 +25,7 @@ public class MonitorController {
     private final int shortRefresh;
     private int shortRefreshCount;
 
-    private class Command {
+    private static class Command {
 
         private boolean ok;
         private int id;
@@ -55,7 +52,7 @@ public class MonitorController {
                 }
 
                 ok = true;
-            } catch (Exception ex) {
+            } catch (Exception ignored) {
             }
         }
 
@@ -96,12 +93,12 @@ public class MonitorController {
     }
 
     @GetMapping(path="/int/monitor")
-    public String greetingInternal(Model model) {
+    public String greetingInternal() {
         return "monitorstatus";
     }
 
     @GetMapping(path="/ext/monitor")
-    public String greetingExternal(Model model) {
+    public String greetingExternal() {
         return "monitorstatusext";
     }
 

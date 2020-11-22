@@ -1,7 +1,6 @@
 package com.jbr.middletier.monitor.manager;
 
 import org.json.JSONObject;
-import org.json.JSONPropertyName;
 
 import java.util.Date;
 
@@ -34,7 +33,6 @@ class HealthUrl extends Url {
     public void processResonse(String response) {
         this.problem = false;
 
-        boolean statusUp = false;
         JSONObject obj = new JSONObject(response);
         if(!obj.isNull(STATUS)) {
             if(!obj.getString(STATUS).equals("UP")) {

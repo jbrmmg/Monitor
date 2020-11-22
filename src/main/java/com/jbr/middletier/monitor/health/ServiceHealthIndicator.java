@@ -2,13 +2,10 @@ package com.jbr.middletier.monitor.health;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
 
 /**
  * Created by jason on 23/09/18.
@@ -24,7 +21,7 @@ public class ServiceHealthIndicator implements HealthIndicator {
     @Override
     public Health health() {
         try {
-            LOG.info(String.format("Check Database"));
+            LOG.info("Check Database");
 
             return Health.up().withDetail("service", serviceName).withDetail("Backup Types",1).build();
         } catch (Exception e) {
