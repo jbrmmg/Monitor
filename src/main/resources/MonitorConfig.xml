@@ -31,9 +31,8 @@
                     <MonitoredItem port="12013"/>
                     <MonitoredItem port="12017"/>
                     <MonitoredItem port="12001"/>
-                    <MonitoredItem port="12022"/>
-                    <MonitoredItem host="192.168.178.43"  port="12021" name="Small Broom Monitor"/>
-                    <MonitoredItem host="192.168.178.53"  port="12021" name="Medium Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.43" port="12021" name="Small Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.53" port="12021" name="Medium Broom Monitor"/>
                     <MonitoredItem host="192.168.178.57" port="12021" name="Raspberry Pi Monitor"/>
                     <MonitoredItem host="192.168.178.56" port="12021" name="Raspberry Pi 2 Monitor"/>
                     <MonitoredItem host="192.168.178.60" port="12021" name="Raspberry Pi 3 Monitor"/>
@@ -42,7 +41,6 @@
                     <MonitoredItem port="10013"/>
                     <MonitoredItem port="10017"/>
                     <MonitoredItem port="10001"/>
-                    <MonitoredItem port="10022"/>
                 </MonitoredItems>
             </Monitor>
         </Monitors>
@@ -54,8 +52,8 @@
         <Monitors>
             <Monitor name="Tiny Broom" port="12021" primary="yes">
                 <MonitoredItems>
-                    <MonitoredItem host="192.168.178.35"  port="12021" name="Triggers Broom Monitor"/>
-                    <MonitoredItem host="192.168.178.53"  port="12021" name="Medium Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.35" port="12021" name="Triggers Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.53" port="12021" name="Medium Broom Monitor"/>
                     <MonitoredItem host="192.168.178.57" port="12021" name="Raspberry Pi Monitor"/>
                     <MonitoredItem host="192.168.178.56" port="12021" name="Raspberry Pi 2 Monitor"/>
                     <MonitoredItem host="192.168.178.60" port="12021" name="Raspberry Pi 3 Monitor"/>
@@ -71,8 +69,8 @@
         <Monitors>
             <Monitor name="Small Broom" port="12021" primary="yes">
                 <MonitoredItems>
-                    <MonitoredItem host="192.168.178.35"  port="12021" name="Triggers Broom Monitor"/>
-                    <MonitoredItem host="192.168.178.53"  port="12021" name="Medium Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.35" port="12021" name="Triggers Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.53" port="12021" name="Medium Broom Monitor"/>
                     <MonitoredItem host="192.168.178.57" port="12021" name="Raspberry Pi Monitor"/>
                     <MonitoredItem host="192.168.178.56" port="12021" name="Raspberry Pi 2 Monitor"/>
                     <MonitoredItem host="192.168.178.60" port="12021" name="Raspberry Pi 3 Monitor"/>
@@ -88,8 +86,8 @@
         <Monitors>
             <Monitor name="Medium Broom" port="12021" primary="yes">
                 <MonitoredItems>
-                    <MonitoredItem host="192.168.178.35"  port="12021" name="Triggers Broom Monitor"/>
-                    <MonitoredItem host="192.168.178.43"  port="12021" name="Small Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.35" port="12021" name="Triggers Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.43" port="12021" name="Small Broom Monitor"/>
                     <MonitoredItem host="192.168.178.57" port="12021" name="Raspberry Pi Monitor"/>
                     <MonitoredItem host="192.168.178.56" port="12021" name="Raspberry Pi 2 Monitor"/>
                     <MonitoredItem host="192.168.178.60" port="12021" name="Raspberry Pi 3 Monitor"/>
@@ -105,9 +103,9 @@
         <Monitors>
             <Monitor name="Raspberry Pi" port="12021" primary="yes">
                 <MonitoredItems>
-                    <MonitoredItem host="192.168.178.35"  port="12021" name="Triggers Broom Monitor"/>
-                    <MonitoredItem host="192.168.178.43"  port="12021" name="Small Broom Monitor"/>
-                    <MonitoredItem host="192.168.178.53"  port="12021" name="Medium Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.35" port="12021" name="Triggers Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.43" port="12021" name="Small Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.53" port="12021" name="Medium Broom Monitor"/>
                     <MonitoredItem host="192.168.178.56" port="12021" name="Raspberry Pi 2 Monitor"/>
                     <MonitoredItem host="192.168.178.60" port="12021" name="Raspberry Pi 3 Monitor"/>
                     <MonitoredItem host="192.168.178.61" port="12021" name="Raspberry Pi 4 Monitor"/>
@@ -122,9 +120,9 @@
         <Monitors>
             <Monitor name="Raspberry Pi 2" port="12021" primary="yes">
                 <MonitoredItems>
-                    <MonitoredItem host="192.168.178.35"  port="12021" name="Triggers Broom Monitor"/>
-                    <MonitoredItem host="192.168.178.43"  port="12021" name="Small Broom Monitor"/>
-                    <MonitoredItem host="192.168.178.53"  port="12021" name="Medium Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.35" port="12021" name="Triggers Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.43" port="12021" name="Small Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.53" port="12021" name="Medium Broom Monitor"/>
                     <MonitoredItem host="192.168.178.57" port="12021" name="Raspberry Pi Monitor"/>
                     <MonitoredItem host="192.168.178.60" port="12021" name="Raspberry Pi 3 Monitor"/>
                     <MonitoredItem host="192.168.178.61" port="12021" name="Raspberry Pi 4 Monitor"/>
@@ -156,9 +154,9 @@
         <Monitors>
             <Monitor name="Raspberry Pi 4" port="12021" primary="yes">
                 <MonitoredItems>
-                    <MonitoredItem host="192.168.178.35"  port="12021" name="Triggers Broom Monitor"/>
-                    <MonitoredItem host="192.168.178.43"  port="12021" name="Small Broom Monitor"/>
-                    <MonitoredItem host="192.168.178.53"  port="12021" name="Medium Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.35" port="12021" name="Triggers Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.43" port="12021" name="Small Broom Monitor"/>
+                    <MonitoredItem host="192.168.178.53" port="12021" name="Medium Broom Monitor"/>
                     <MonitoredItem host="192.168.178.57" port="12021" name="Raspberry Pi Monitor"/>
                     <MonitoredItem host="192.168.178.56" port="12021" name="Raspberry Pi 2 Monitor"/>
                     <MonitoredItem host="192.168.178.60" port="12021" name="Raspberry Pi 3 Monitor"/>
